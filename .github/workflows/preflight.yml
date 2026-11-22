@@ -1,0 +1,33 @@
+name: preflight
+
+on:
+  pull_request:
+    paths:
+      - 'submissions/**'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check changed submissions
+        run: |
+          git fetch --no-tags origin "${{ github.base_ref }}"
+          dirs=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- submissions | awk -F/ 'NF > 1 { print $2 }' | sort -u)
+          if [ -z "$dirs" ]; then
+            echo "no submission directories changed"
+            exit 0
+          fi
+          for dir in $dirs; do
+            echo "::group::submissions/$dir"
+            node scripts/check-submissions.mjs "submissions/$dir"
+            echo "::endgroup::"
+          done
