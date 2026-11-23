@@ -1,0 +1,7 @@
+# dsh-whale-console — 鲸鱼娘控制台
+# config.scriptsDir 必填；powershell / ports / scripts 可选。
+- insert:
+    - id: dsh-whale-console
+      name: dsh-whale-console
+      config:
+        scriptsDir: ''
