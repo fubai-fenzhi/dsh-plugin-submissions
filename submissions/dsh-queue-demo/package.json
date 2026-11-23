@@ -1,0 +1,20 @@
+{
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/fubai-fenzhi/dsh-queue-demo.git"
+                   },
+    "license":  "MIT",
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin"
+                 ],
+    "name":  "dsh-queue-demo",
+    "description":  "Queue demo package",
+    "version":  "0.0.1",
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            },
+    "homepage":  "https://github.com/fubai-fenzhi/dsh-queue-demo"
+}
