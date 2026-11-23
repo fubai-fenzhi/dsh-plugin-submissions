@@ -1,0 +1,20 @@
+{
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/fubai-fenzhi/dsh-selftest.git"
+                   },
+    "license":  "MIT",
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin"
+                 ],
+    "name":  "dsh-selftest",
+    "description":  "Preflight self-test package",
+    "version":  "0.1.0",
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            },
+    "homepage":  "https://github.com/fubai-fenzhi/dsh-selftest"
+}
