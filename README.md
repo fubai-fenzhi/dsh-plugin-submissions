@@ -2,6 +2,17 @@
 
 DSH 插件提交入口：每个插件一个目录，通过 PR 提交，CI 自动预检，维护者合并即通过。
 
+## 无账号提交（入口）
+
+如果作者没有 GitHub 账号，不需要 fork / 开 PR：
+
+1. 把包目录或 zip + `SUBMISSION.md` 交给维护者
+2. 维护者保存到 `submissions/<npm 包名>/`
+3. 维护者跑 `publish_preflight` → 人工审 → `publish_submit`（维护者 GitHub）→ `publish_npm`（维护者 npm）
+4. 署名仍写作者
+
+接收渠道（待定）：QQ 群 / 邮箱，维护者确定后补在这里。
+
 ## 提交
 
 1. Fork 本仓库
